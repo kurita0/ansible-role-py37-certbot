@@ -1,0 +1,17 @@
+galaxy_info:
+  role_name: py37-certbot
+  author: hideaki kurita
+  description: certbot
+
+  license: license (BSD, MIT)
+
+  min_ansible_version: 2.5
+
+  platforms:
+    - name: FreeBSD 
+      versions:
+      - 12.1
+
+  galaxy_tags: []
+
+dependencies: []

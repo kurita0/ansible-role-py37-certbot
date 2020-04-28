@@ -1,0 +1,14 @@
+---
+- name: Install certbot
+  pkgng: name={{ item }} state=present
+  with_items:
+    - py37-certbot
+
+- name: Renew certs
+  cron:
+    cron_file: /etc/crontab
+    name: "renew certs"
+    minute: 1
+    hour: 15
+    user: root
+    job: /usr/local/bin/certbot renew 1>>/var/log/certbot-renew.log 2>&1
